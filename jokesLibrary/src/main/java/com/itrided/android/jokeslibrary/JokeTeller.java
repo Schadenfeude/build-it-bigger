@@ -6,7 +6,7 @@ import com.sun.jersey.api.client.WebResource;
 
 import org.json.JSONObject;
 
-public class JokeTeller {
+public final class JokeTeller {
     private static final String CHUCK_NORRIS_API_URL = "https://api.chucknorris.io/jokes/random";
     private static final String DEFAULT_JOKE = "Chuck Norris threw a grenade and killed 50 people, then it exploded.";
     private static final String GET_JOKE = "value";
