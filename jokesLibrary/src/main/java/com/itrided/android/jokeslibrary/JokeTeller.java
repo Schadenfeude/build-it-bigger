@@ -18,8 +18,7 @@ public final class JokeTeller {
             final ClientResponse response = webResource.get(ClientResponse.class);
 
             if (response.getStatus() != 200) {
-                throw new RuntimeException("Failed : HTTP error code : "
-                        + response.getStatus());
+                return DEFAULT_JOKE;
             }
 
             final String result = response.getEntity(String.class);
@@ -27,7 +26,7 @@ public final class JokeTeller {
 
             return json.getString(GET_JOKE);
         } catch (Exception e) {
-            return DEFAULT_JOKE;
+            throw new RuntimeException(e);
         }
     }
 }
