@@ -24,9 +24,9 @@ allprojects {
 task mainTask {
     evaluationDependsOn ":backend"
     dependsOn ':backend:appengineStart'
-//    dependsOn ':app:connectedAndroidTest'
+    dependsOn ':app:connectedAndroidTest'
     dependsOn ':backend:appengineStop'
     doLast {
-        println 'All the tests run correctly!'
+        println 'Great Success!'
     }
 }
