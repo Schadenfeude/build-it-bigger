@@ -50,13 +50,12 @@ public class JokeActivityFragment extends Fragment {
             @Override
             public void makeMeLaugh(@NonNull String joke) {
                 showJokeDetail(joke);
-                Log.d("makeMeLaugh", "makeMeLaugh: " + joke);
             }
         };
     }
 
     private void showJokeDetail(String joke) {
-        Intent intent = new Intent(getContext(), JokeDetailActivity.class);
+        final Intent intent = new Intent(getContext(), JokeDetailActivity.class);
         intent.putExtra(JokeDetailActivity.JOKE_EXTRA_NAME, joke);
         startActivityForResult(intent, REQUEST_CODE);
     }
